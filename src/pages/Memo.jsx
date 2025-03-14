@@ -8,7 +8,7 @@ function Memo() {
 
   useEffect(()=>{
     axios.get(`${process.env.REACT_APP_APIURL}/memo`,
-      {headers:{"Content=Type": "application/json"}}
+      {headers:{"Content-Type": "application/json"}}
     )
     .then(res=>{
       setData(res.data);
