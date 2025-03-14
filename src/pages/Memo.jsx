@@ -7,7 +7,9 @@ function Memo() {
   const [data,setData] = useState([]);
 
   useEffect(()=>{
-    axios.get(`${process.env.REACT_APP_APIURL}/memo`)
+    axios.get(`${process.env.REACT_APP_APIURL}/memo`,
+      {headers:{"Content=Type": "application/json"}}
+    )
     .then(res=>{
       setData(res.data);
     })
